@@ -12,8 +12,9 @@ const PORT = 7777
 const IP_LOOPBACK = 'localhost'
 const IP_LOCAL = '127.0.0.1'  
 
-app.get('/add/aboutyou', (req, res) => {
-  res.send('Exercices express partie 1')
+app.get('/aboutyou', (req, res) => {
+  let uA = req.headers['user-agent']
+  res.send(`Ton ip est ${req.ip} et voici ton navigateur \n${uA}`)
 })
 
 app.listen(PORT, IP_LOCAL, () => {
